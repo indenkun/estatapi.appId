@@ -125,12 +125,10 @@ estat_getDataCatalog <- function(lang = c("J", "E"),
                                  startPosition = NULL,
                                  limit = NULL,
                                  updatedDate = NULL,
-                                 appId = NULL,
+                                 appId = check_appId(),
                                  ...){
 
-  if(is.null(appId) && file.exists(file_appId())){
-    appId <- check_appId()
-  }
+  if(is.null(appId)) stop("appId is not specified.")
 
   estatapi::estat_getDataCatalog(appId = appId,
                                  lang = lang,
@@ -152,11 +150,9 @@ estat_getDataCatalog <- function(lang = c("J", "E"),
 #' @rdname estatapi
 #' @export
 
-estat_getMetaInfo <- function(statsDataId, lang = c("J", "E"), appId = NULL, ...){
+estat_getMetaInfo <- function(statsDataId, lang = c("J", "E"), appId = check_appId(), ...){
 
-  if(is.null(appId) && file.exists(file_appId())){
-    appId <- check_appId()
-  }
+  if(is.null(appId)) stop("appId is not specified.")
 
   estatapi::estat_getMetaInfo(appId = appId,
                               statsDataId = statsDataId,
@@ -172,12 +168,10 @@ estat_getStatsData <- function(statsDataId,
                                limit = NULL,
                                lang = c("J", "E"),
                                .fetch_all = TRUE,
-                               appId = NULL,
+                               appId = check_appId(),
                                ...){
 
-  if(is.null(appId) && file.exists(file_appId())){
-    appId <- check_appId()
-  }
+  if(is.null(appId)) stop("appId is not specified.")
 
   estatapi::estat_getStatsData(appId = appId,
                                statsDataId = statsDataId,
@@ -203,12 +197,10 @@ estat_getStatsList <- function(searchWord,
                               startPosition = NULL,
                               limit = NULL,
                               updatedDate = NULL,
-                              appId = NULL,
+                              appId = check_appId(),
                               ...){
 
-  if(is.null(appId) && file.exists(file_appId())){
-    appId <- check_appId()
-  }
+  if(is.null(appId)) stop("appId is not specified.")
 
   estatapi::estat_getStatsList(appId = appId,
                                searchWord = searchWord,
@@ -230,12 +222,10 @@ estat_getStatsList <- function(searchWord,
 #' @export
 
 estat_api <- function(path,
-                      appId = NULL,
+                      appId = check_appId(),
                       ...){
 
-  if(is.null(appId) && file.exists(file_appId())){
-    appId <- check_appId()
-  }
+  if(is.null(appId)) stop("appId is not specified.")
 
   estatapi::estat_api(path = path,
                       appId = appId)

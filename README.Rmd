@@ -41,7 +41,7 @@ set_appId("XXX")
 
 e-Stat APIを操作する各関数の基本的な挙動はもともとの`{estatapi}`と変わりません。
 
-`{estatapi}`と`{estatapi.appId}`とのe-Stat APIを操作する各関数の変更点は、`{estatapi.appId}`では引数の`appId`が一番最後になっており、既定値が`NULL`になっていますが、`set_appId()`で設定されて入ればその値が代入されるようになっています。
+`{estatapi}`と`{estatapi.appId}`とのe-Stat APIを操作する各関数の変更点は、`{estatapi.appId}`では引数の`appId`が一番最後になっており、既定値が`set_appId()`で設定された値（`check_appId()`）になっています。
 
 ```{r, echo=FALSE}
 library(estatapi.appId)
@@ -51,7 +51,9 @@ library(estatapi.appId)
 estat_getStatsList("チョコレート")
 ```
 
-ただし、`appId`が各関数の実行時に指定されている場合には、入力された値が優先的に使用されます。
+`appId`が各関数の実行時に指定されている場合には、入力された値が優先的に使用されます。
+
+`set_appId()`で`appId`が設定されていない場合、`check_appId()`は`NULL`を出力するため、`appId`がないため処理が中断されます。
 
 `appId`は`{tools}`の`R_user_dir()`指定されるユーザー設定ディレクトリ下に`appId`ファイルを作成し、平文で保存します。
 

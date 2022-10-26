@@ -22,11 +22,11 @@ estat_getDataCatalog(
   startPosition = NULL,
   limit = NULL,
   updatedDate = NULL,
-  appId = NULL,
+  appId = check_appId(),
   ...
 )
 
-estat_getMetaInfo(statsDataId, lang = c("J", "E"), appId = NULL, ...)
+estat_getMetaInfo(statsDataId, lang = c("J", "E"), appId = check_appId(), ...)
 
 estat_getStatsData(
   statsDataId,
@@ -34,7 +34,7 @@ estat_getStatsData(
   limit = NULL,
   lang = c("J", "E"),
   .fetch_all = TRUE,
-  appId = NULL,
+  appId = check_appId(),
   ...
 )
 
@@ -51,11 +51,11 @@ estat_getStatsList(
   startPosition = NULL,
   limit = NULL,
   updatedDate = NULL,
-  appId = NULL,
+  appId = check_appId(),
   ...
 )
 
-estat_api(path, appId = NULL, ...)
+estat_api(path, appId = check_appId(), ...)
 }
 \arguments{
 \item{lang}{Language of the data. \code{"J"}(Japanese) or \code{"E"}(English).}
