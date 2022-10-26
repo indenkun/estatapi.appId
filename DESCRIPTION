@@ -1,0 +1,15 @@
+Package: estatapi.appId
+Type: Package
+Title: Wrap Function to Execute Functions of `{estatapi}`
+Version: 0.0.0.9000
+Author: indenkun
+Maintainer: indenkun <blog@indenkun.hatenablog.com>
+Description: Wrap function to execute functions of `{estatapi}` using the appId 
+    set by set_appId().
+License: MIT + file LICENSE
+Encoding: UTF-8
+Imports: 
+    estatapi,
+    rappdirs
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.1
