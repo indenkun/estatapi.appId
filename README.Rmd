@@ -53,7 +53,7 @@ estat_getStatsList("チョコレート")
 
 ただし、`appId`が各関数の実行時に指定されている場合には、入力された値が優先的に使用されます。
 
-`appId`は`{rappdirs}`の`user_data_dir()`指定されるユーザー設定ディレクトリ下に`R\estatapi.appId`に`appId`ファイルに平文で保存されます。
+`appId`は`{tools}`の`R_user_dir()`指定されるユーザー設定ディレクトリ下に`appId`ファイルを作成し、平文で保存します。
 
 `clear_appId()`を実行するとこの`appId`ファイルが削除されます。
 
@@ -66,9 +66,9 @@ MIT.
 ## Imports Packages
 
 * `{estatapi}`
-* `{rappdirs}`
+* `{tools}`
 
 ## Notice
 
 * R 4.2.1 (Windows)でのみ挙動を確認しています。
-* 多分MacやLinuxでも`{rappdirs}`の`user_data_dir()`関数がいい感じにディレクトリを指定してくれるはずなので期待通りの動作をすると思います。
+* 多分MacやLinuxでも`{tools}`の`R_user_dir()`関数がいい感じにディレクトリを指定してくれるはずなので期待通りの動作をすると思います。

@@ -12,7 +12,7 @@ set_appId <- function(appId){
   }
 
   dir_appId <- dir_appId()
-  if(!dir.exists(dir_appId)) dir.create(dir_appId)
+  if(!dir.exists(dir_appId)) dir.create(dir_appId, recursive = TRUE)
 
   write(appId, file = file_appId())
 }

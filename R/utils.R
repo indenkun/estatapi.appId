@@ -6,7 +6,7 @@
 #' @rdname Utils
 
 dir_appId <- function(){
-  rappdirs::user_data_dir(appname = "estatapi.appId", appauthor = "R")
+  tools::R_user_dir("estatapi.appId", which = "data")
 }
 
 #' @rdname Utils
