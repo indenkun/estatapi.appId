@@ -27,7 +27,7 @@ e-StatのAPIを操作する各関数の挙動は`{estatapi}`のドキュメン�
 You can install the development version of `{estatapi.appId}` like so:
 
 ``` r
-remote::install_github("indenkun/estatapi.appId")
+remotes::install_github("indenkun/estatapi.appId")
 ```
 
 ## 使い方
